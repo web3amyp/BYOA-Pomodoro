@@ -1,0 +1,194 @@
+:root {
+    --color-background: #F5F3FF;
+    --color-primary: #A78BFA;
+    --color-primary-hover: #8B5CF6;
+    --color-danger: #FB7185;
+    --color-danger-hover: #F43F5E;
+    --color-work: #94A3B8;
+    --color-work-hover: #64748B;
+    --color-rest: #93C5FD;
+    --color-rest-hover: #60A5FA;
+    --color-text: #1E293B;
+    --color-text-secondary: #475569;
+    --color-exercise: #4ADE80;
+    --color-exercise-hover: #22C55E;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, var(--color-background) 0%, #EEF2FF 100%);
+    padding: 1rem;
+}
+
+.timers-container {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background-color: white;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(2rem, 5vw, 4rem);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(167, 139, 250, 0.1);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px rgba(167, 139, 250, 0.15);
+}
+
+h1 {
+    color: var(--color-text);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: -0.025em;
+}
+
+.timer {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin: 2rem 0;
+    color: var(--color-primary);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.controls {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    justify-content: center;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    padding: clamp(0.6rem, 2vw, 0.875rem) clamp(1.25rem, 3vw, 1.75rem);
+    cursor: pointer;
+    border: none;
+    border-radius: clamp(10px, 2vw, 14px);
+    transition: all 0.2s ease;
+    color: white;
+    white-space: nowrap;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(167, 139, 250, 0.2);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+.start {
+    background-color: var(--color-primary);
+}
+
+.start:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.reset {
+    background-color: var(--color-danger);
+}
+
+.reset:hover {
+    background-color: var(--color-danger-hover);
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mode-toggle {
+    background-color: var(--color-work);
+}
+
+.mode-toggle.active {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(167, 139, 250, 0.3);
+}
+
+.mode-toggle.work-mode {
+    background-color: var(--color-exercise);
+    color: white;
+}
+
+.mode-toggle.work-mode:hover {
+    background-color: var(--color-exercise-hover);
+}
+
+.mode-toggle.exercise-mode {
+    background-color: var(--color-rest);
+    color: white;
+}
+
+.mode-toggle.exercise-mode:hover {
+    background-color: var(--color-rest-hover);
+}
+
+.mode-toggle.rest-mode {
+    background-color: var(--color-work);
+    color: white;
+}
+
+.mode-toggle.rest-mode:hover {
+    background-color: var(--color-work-hover);
+}
+
+.status {
+    margin-top: 2rem;
+}
+
+.status-text {
+    color: var(--color-text-secondary);
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .timers-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .controls button {
+        width: 100%;
+    }
+} 
